@@ -1,4 +1,5 @@
 import { apiGet } from '../api'
+import Header from '../components/header';
 import { $, cost, filterDuplicate, numberWithCommas } from '../optionf'
 const Home = {
         render: async function() {
@@ -158,10 +159,12 @@ const Home = {
     afterRender: function() {
 
        const categories = $(".dm")//[0].dataset.id
-
+console.log(categories)
        for(let cate of categories){
         cate.addEventListener('click',async function(e){
+
             const catename =(cate.dataset.id)
+            console.log(catename)
             // console.log(typeof catename)
             const newdata = await apiGet(`/books?categories.name=${catename}`)
             console.log(newdata)
