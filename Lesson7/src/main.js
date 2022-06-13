@@ -11,7 +11,6 @@ import "../style.css";
 import admin from "./pages/admin/book";
 import adBookDetail from "./pages/admin/book/manage";
 import Signin from "./pages/signin";
-import adBookDetailSpecifications from "./pages/admin/book/detail";
 // Config router
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -30,9 +29,6 @@ router.on({
     },
     "admin/books/:id": function(pram) {
         print(adBookDetail, pram)
-    },
-    "admin/books/detail/:id": function(pram) {
-        print(adBookDetailSpecifications, pram)
     },
     "/signin": function(pram) {
         print(Signin, pram)
