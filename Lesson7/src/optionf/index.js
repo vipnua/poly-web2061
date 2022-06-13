@@ -41,6 +41,14 @@ const reRender = async function(element, component) {
 }
 
 
+const reRender = async function(element, component) {
+    if (element) {
+        $(element).innerHTML = await component.render()
+    }
+    if (component.afterRender) {
+        component.afterRender()
+    }
+}
 export {
     priceline,
     cost,

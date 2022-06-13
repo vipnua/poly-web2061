@@ -11,6 +11,7 @@ import "../style.css";
 import admin from "./pages/admin/book";
 import adBookDetail from "./pages/admin/book/manage";
 import Signin from "./pages/signin";
+import adBookDetailSpecifications from "./pages/admin/book/detail";
 // Config router
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -30,6 +31,9 @@ router.on({
     "admin/books/:id": function(pram) {
         print(adBookDetail, pram)
     },
+    "admin/books/detail/:id": function(pram) {
+        print(adBookDetailSpecifications, pram)
+    },
     "/signin": function(pram) {
         print(Signin, pram)
     }
@@ -39,6 +43,7 @@ router.resolve();
 
 async function print(content, param) {
     document.querySelector("#header").innerHTML = Header.render();
+    if(Header.afterRender){Header.afterRender()}
     if (content) { document.querySelector("#app").innerHTML = await content.render(param); }
     document.querySelector("#footer").innerHTML = Footer.render();
     if (content.afterRender) { content.afterRender(); }
