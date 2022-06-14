@@ -3,6 +3,7 @@ import Home from "../pages/home"
 const Header = {
     render: function() {
         return /*html*/ `
+        <div class="bg-[#29f] h-24 "> 
         <div class="container flex flex-row mx-auto items-center">
            <div class="basis-1/4">   
             <div class="flex justify-center pl-10">
@@ -37,7 +38,7 @@ const Header = {
             </ul>          
       </div>
         <div class="bg-[#e4e4f2] h-10 w-auto pl-60 flex items-center text-sm">Trang chủ > Nhà sách tiki <div>
-     
+        </div>
         `
     },
     afterRender(){

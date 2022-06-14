@@ -31,6 +31,15 @@ function filterDuplicate(arr) {
     }
     return newArr;
 }
+const reRender = async function(element, component) {
+    if (element) {
+        document.querySelector(element).innerHTML = await component.render()
+    }
+    if (component.afterRender) {
+        component.afterRender()
+    }
+}
+
 
 const reRender = async function(element, component) {
     if (element) {
